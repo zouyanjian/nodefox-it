@@ -1,0 +1,16 @@
+{
+    "name": "nodejs-it"
+  , "version": "1.0.0"
+  , "description": "NodeFox 集成测试工具"
+  , "author": "zouyanjian <zouyanjian110@gmail.com>"
+  , "dependencies":{
+    "mysql":">=2.0.0-alpha8"
+  }
+  , "devDependencies": {
+        "mocha": ">= 0.14.1"
+      , "should": ">= 0.6.0"
+      , "glob": ">= 3.1.7"
+      , "hogan.js": ">= 2.0.0"
+      , "dox": ">= 0.2.0"
+    }
+}
