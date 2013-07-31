@@ -1,3 +1,4 @@
+/*
 var should = require('should')
   , Template = require('../lib/json_compare');
 
@@ -12,3 +13,4 @@ describe('Template', function () {
     tpl.getAnswer().should.equal(42);
   });
 });
+*/

@@ -2,7 +2,7 @@
 
 var fs = require('fs')
 var mysql = require('mysql')
-var compare = require('./lib/json_compare')
+var compare = require('./lib/models/json_compare')
 
 
 var connection = mysql.createConnection({
@@ -46,10 +46,13 @@ connection.query("select * from demo_1", function(err,rows,fields) {
 });
 connection.end();
 
-var json1="{\"a\":\"1\",\"b\":\"2\",\"data\":[{\"a\":\"b\"},{\"a\":\"b\"}]}";
-var json2="{\"b\":\"2\",\"a\":\"1\",\"data\":[{\"a\":\"b\"},{\"a\":\"b\"}]}";
+var json1="{\"a\":\"1\",\"b\":\"2\",\"data\":[{\"a\":\"阿萨德发哈\"},{\"a\":\"b\"}]}";
+var json2="{\"b\":\"2\",\"a\":\"1\",\"data\":[{\"a\":\"阿萨德发哈\"},{\"a\":\"b\"}]}";
 var result = JSON.parse(json1) === JSON.parse(json2);
 console.log("xxxx:"+result)
 console.log("dddd:"+new compare("Json Compare").deepCompare( JSON.parse(json1),JSON.parse(json2)));
 
 
+var record="{\"data\":[{\"f30\":60974462,\"f31\":\"途顺汽车用品专营店\",\"f32\":12,\"f33\":2}],\"msg\":null,\"expire\":300}";
+var record2="{\"data\":[{\"f30\":60974462,\"f31\":\"途顺汽车用品专营店\",\"f32\":11,\"f33\":2}],\"msg\":null,\"expire\":300}";
+console.log("eeee:"+new compare("Json Compare").deepCompare( JSON.parse(record),JSON.parse(record2)));
