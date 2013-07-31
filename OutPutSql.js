@@ -46,8 +46,8 @@ connection.query("select * from demo_1", function(err,rows,fields) {
 });
 connection.end();
 
-var json1="{\"a\":\"1\",\"b\":\"2\",\"data\":[\"a\",\"b\",\"c\"]}";
-var json2="{\"b\":\"2\",\"a\":\"1\",\"data\":[\"b\",\"a\",\"c\"]}";
+var json1="{\"a\":\"1\",\"b\":\"2\",\"data\":[{\"a\":\"b\"},{\"a\":\"b\"}]}";
+var json2="{\"b\":\"2\",\"a\":\"1\",\"data\":[{\"a\":\"b\"},{\"a\":\"b\"}]}";
 var result = JSON.parse(json1) === JSON.parse(json2);
 console.log("xxxx:"+result)
 console.log("dddd:"+new compare("Json Compare").deepCompare( JSON.parse(json1),JSON.parse(json2)));
